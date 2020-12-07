@@ -1,0 +1,5 @@
+{
+  "app": "Auctioneer",
+  "loglevel": "debug",
+  "port": 5767
+}

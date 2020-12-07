@@ -1,0 +1,8 @@
+.dist/
+dist/
+node_modules/
+yarn-error.log
+Dockerfile
+tmp/
+npm-debug.log
+scripts/
