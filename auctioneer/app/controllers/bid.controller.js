@@ -19,7 +19,7 @@ class BidController {
     const bids = await Promise.all(
       promises.map(p => p.catch(err => null))
     );
-    console.log(bids);
+
     if (bids.some(ele => ele)) Responder.success(res, _.max(bids));
     else Responder.operationFailed(res, {
       status: 504,
