@@ -47,7 +47,7 @@ const schema = {
   serviceName: {
     doc: "The service name by which auctioneer can access the bidder",
     format: String,
-    default: "bidder",
+    default: "localhost",
     env: "SERVICE_NAME"
   }
 }

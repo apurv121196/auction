@@ -54,7 +54,7 @@ function catchErrorRoutes() {
 
 function register() {
   const registrationURL = config.get('registrationURL');
-  const bidderURL = `${config.get('protocol')}://${config.get('serviceName')}:${config.get('port')}/`
+  const bidderURL = `${config.get('protocol')}://${config.get('serviceName')}:${config.get('port')}/bid/`
   postRequest(registrationURL, {
     bidderURL
   }).then(response => {

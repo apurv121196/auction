@@ -3,7 +3,7 @@ const BidController = require('../controllers/bid.controller');
 
 const initBidRoutes = () => {
   const bidRouter = express.Router();
-  bidRouter.get(BidController.bid);
+  bidRouter.get('/', BidController.bid);
 
   return bidRouter;
 };
