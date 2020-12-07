@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  auctioneer:
+    build: ./auctioneer
+    container_name: auctioneer
+    ports:
+      - "5767:5767"
+  
+  bidder0:
+    build:
+      context: ./bidder
+      args:
+        - PORT=5999
+    container_name: bidder0
+    depends_on:
+      - auctioneer
+    ports:
+      - 5999
+    environment:
+      DELAY_TIME: 200
+      REGISTRATION_URL: http://auctioneer:5767/register/
+      SERVICE_NAME: bidder0
+      PORT: 5999
+
+  bidder1:
+    build:
+      context: ./bidder
+      args:
+        - PORT=5888
+    container_name: bidder1
+    depends_on:
+      - auctioneer
+    ports:
+      - 5888
+    environment:
+      DELAY_TIME: 400
+      REGISTRATION_URL: http://auctioneer:5767/register/
+      SERVICE_NAME: bidder1
+      PORT: 5888
